@@ -1,10 +1,3 @@
-//-----------------------------------------------------------------------
-// BaseShaderEditor.cs
-//
-// Copyright 2020 Social Point SL. All rights reserved.
-//
-//-----------------------------------------------------------------------
-using SocialPoint.TA.Utils;
 using UnityEditor;
 using UnityEngine;
 
@@ -65,3 +58,5 @@ public class BaseShaderEditor : ShaderGUI
         return new Vector3(x, y, z);
     }
 }
+
+
