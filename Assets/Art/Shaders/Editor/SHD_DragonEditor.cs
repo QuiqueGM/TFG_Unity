@@ -1,9 +1,3 @@
-//-----------------------------------------------------------------------
-// SHD_EggEditor.cs
-//
-// Copyright 2021 Social Point SL. All rights reserved.
-//
-//-----------------------------------------------------------------------
 using UnityEditor;
 using UnityEngine;
 
