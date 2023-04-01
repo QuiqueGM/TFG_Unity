@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_CHR_Cave_A
+  m_Name: MAT_CHR_Cave
   m_Shader: {fileID: -6465566751694194690, guid: 937a29204ece5a0408f7a5fd7612afdb,
     type: 3}
   m_ValidKeywords: []
