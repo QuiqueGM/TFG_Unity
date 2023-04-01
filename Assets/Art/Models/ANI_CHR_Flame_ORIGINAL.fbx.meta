@@ -103,20 +103,7 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths:
-    - Rig/D_Chest
-    - Rig/D_Chest/R_Wing01_JNT/R_Wing02_JNT/R_Wing03_JNT/R_Wing04_JNT/R_Wing05_JNT/D_WingR
-    - Rig/Head_JNT/D_EyeL
-    - Rig/Head_JNT/D_EyeR
-    - Rig/L_B_Ankle_DEF/D_FootL
-    - Rig/R_B_Ankle_DEF/D_FootR
-    - Rig/L_F_Ankle_DEF/D_HandL
-    - Rig/R_F_Ankle_DEF/D_HandR
-    - Rig/Head_JNT/D_Mouth
-    - Rig/Head_JNT/D_Range
-    - Rig/D_Root
-    - Rig/D_Root/Tail01_JNT/Tail02_JNT/Tail03_JNT/Tail04_JNT/D_Tail
-    - Rig/D_Chest/L_Wing01_JNT/L_Wing02_JNT/L_Wing03_JNT/L_Wing04_JNT/L_Wing05_JNT/D_WingL
+    extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
@@ -810,7 +797,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    optimizeBones: 1
+    optimizeBones: 0
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
