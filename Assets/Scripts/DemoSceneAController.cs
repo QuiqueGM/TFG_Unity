@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace UOC.TFG.TechnicalDemo
 {
@@ -13,6 +14,8 @@ namespace UOC.TFG.TechnicalDemo
         [SerializeField] private Animator animator;
         [SerializeField] private Renderer mesh;
         [SerializeField] private List<Material> skins;
+        public Button test;
+        public Button test2;
 
         private Dictionary<InputAction, Action<InputAction.CallbackContext>> _actions;
         private int _animation = 0;
@@ -36,6 +39,9 @@ namespace UOC.TFG.TechnicalDemo
                 action.Key.performed += action.Value;
                 action.Key.canceled += action.Value;
             }
+
+            test.onClick.AddListener(SetNextAnimation);
+            test2.onClick.AddListener(SetPrevAnimation);
         }
 
         private void OnEnable()
@@ -52,21 +58,19 @@ namespace UOC.TFG.TechnicalDemo
 
         #region CALLBACKS
 
-        public void SetNextAnimation(InputAction.CallbackContext context)
+        private void SetNextAnimation(InputAction.CallbackContext context)
         {
             if (context.ReadValueAsButton())
             {
-                _animation = _animation == NUMBER_OF_ANIMATIONS ? 0 : ++_animation;
-                SetAnimation();
+                SetNextAnimation();
             }
         }
 
-        public void SetPrevAnimation(InputAction.CallbackContext context)
+        private void SetPrevAnimation(InputAction.CallbackContext context)
         {
             if (context.ReadValueAsButton())
             {
-                _animation = _animation == 0 ? NUMBER_OF_ANIMATIONS : --_animation;
-                SetAnimation();
+                SetPrevAnimation();
             }
         }
 
@@ -96,10 +100,18 @@ namespace UOC.TFG.TechnicalDemo
             }
         }
 
-        private void SetAnimation()
+        public void SetNextAnimation()
         {
+            _animation = _animation == NUMBER_OF_ANIMATIONS ? 0 : ++_animation;
             animator.SetFloat(StringsData.ANIMATIONS, _animation);
         }
+
+        public void SetPrevAnimation()
+        {
+            _animation = _animation == 0 ? NUMBER_OF_ANIMATIONS : --_animation;
+            animator.SetFloat(StringsData.ANIMATIONS, _animation);
+        }
+
 
         private void SetMaterial()
         {
