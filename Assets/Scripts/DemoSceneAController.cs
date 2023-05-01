@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Cinemachine;
 
 namespace UOC.TFG.TechnicalDemo
 {
@@ -11,15 +12,21 @@ namespace UOC.TFG.TechnicalDemo
         private const int NUMBER_OF_ANIMATIONS = 4;
 
         [SerializeField] private InputActionAsset playerControls;
+        [SerializeField] private CinemachineFreeLook cinemachine;
+
         [SerializeField] private Animator animator;
         [SerializeField] private Renderer mesh;
         [SerializeField] private List<Material> skins;
-        public Button test;
-        public Button test2;
+        [SerializeField] private Button nextAnimation;
+        [SerializeField] private Button previousAnimation;
+        [SerializeField] private Button nextSkin;
+        [SerializeField] private Button previousSkin;
+        [SerializeField] private GameObject menuPause;
 
         private Dictionary<InputAction, Action<InputAction.CallbackContext>> _actions;
         private int _animation = 0;
         private int _skin = 0;
+        private bool _menuPauseState;
 
         private void Awake()
         {
@@ -40,8 +47,12 @@ namespace UOC.TFG.TechnicalDemo
                 action.Key.canceled += action.Value;
             }
 
-            test.onClick.AddListener(SetNextAnimation);
-            test2.onClick.AddListener(SetPrevAnimation);
+            nextAnimation.onClick.AddListener(SetNextAnimation);
+            previousAnimation.onClick.AddListener(SetPrevAnimation);
+            nextSkin.onClick.AddListener(SetNextSkin);
+            previousSkin.onClick.AddListener(SetPrevSkin);
+
+            menuPause.SetActive(_menuPauseState);
         }
 
         private void OnEnable()
@@ -78,8 +89,7 @@ namespace UOC.TFG.TechnicalDemo
         {
             if (context.ReadValueAsButton())
             {
-                _skin = _skin == skins.Count-1 ? 0 : ++_skin;
-                SetMaterial();
+                SetNextSkin();
             }
         }
 
@@ -87,8 +97,7 @@ namespace UOC.TFG.TechnicalDemo
         {
             if (context.ReadValueAsButton())
             {
-                _skin = _skin == 0 ? skins.Count-1 : --_skin;
-                SetMaterial();
+                SetPrevSkin();
             }
         }
 
@@ -96,28 +105,56 @@ namespace UOC.TFG.TechnicalDemo
         {
             if (context.ReadValueAsButton())
             {
-                // Show Menu Pause screen
+                ShowMenuPause();
             }
         }
+
+        #endregion
 
         public void SetNextAnimation()
         {
             _animation = _animation == NUMBER_OF_ANIMATIONS ? 0 : ++_animation;
-            animator.SetFloat(StringsData.ANIMATIONS, _animation);
+            SetAnimation();
         }
 
         public void SetPrevAnimation()
         {
             _animation = _animation == 0 ? NUMBER_OF_ANIMATIONS : --_animation;
+            SetAnimation();
+        }
+
+        public void SetNextSkin()
+        {
+            _skin = _skin == skins.Count - 1 ? 0 : ++_skin;
+            SetSkin();
+        }
+
+        public void SetPrevSkin()
+        {
+            _skin = _skin == 0 ? skins.Count - 1 : --_skin;
+            SetSkin();
+        }
+
+        private void SetAnimation()
+        {
+            if (_menuPauseState) return;
+
             animator.SetFloat(StringsData.ANIMATIONS, _animation);
         }
 
-
-        private void SetMaterial()
+        private void SetSkin()
         {
+            if (_menuPauseState) return;
+
             mesh.material = skins[_skin];
         }
 
-        #endregion
+        public void ShowMenuPause()
+        {
+            cinemachine.enabled = _menuPauseState;
+            animator.enabled = _menuPauseState;
+            _menuPauseState = !_menuPauseState;
+            menuPause.SetActive(_menuPauseState);
+        }
     }
 }
