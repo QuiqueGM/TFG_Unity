@@ -9,7 +9,7 @@ namespace UOC.TFG.TechnicalDemo
 {
     public class DemoSceneAController : MonoBehaviour
     {
-        private const int NUMBER_OF_ANIMATIONS = 4;
+        private const int NUMBER_OF_ANIMATIONS = 5;
 
         [SerializeField] private InputActionAsset playerControls;
         [SerializeField] private CinemachineFreeLook cinemachine;
@@ -113,13 +113,13 @@ namespace UOC.TFG.TechnicalDemo
 
         public void SetNextAnimation()
         {
-            _animation = _animation == NUMBER_OF_ANIMATIONS ? 0 : ++_animation;
+            _animation = _animation == NUMBER_OF_ANIMATIONS - 1 ? 0 : ++_animation;
             SetAnimation();
         }
 
         public void SetPrevAnimation()
         {
-            _animation = _animation == 0 ? NUMBER_OF_ANIMATIONS : --_animation;
+            _animation = _animation == 0 ? NUMBER_OF_ANIMATIONS - 1 : --_animation;
             SetAnimation();
         }
 
