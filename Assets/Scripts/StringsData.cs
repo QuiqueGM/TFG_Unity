@@ -10,7 +10,7 @@ namespace UOC.TFG.TechnicalDemo
         public const string NEXT_SKIN = "NextSkin";
         public const string PREV_SKIN = "PreviousSkin";
         public const string LOCOMOTION = "Locomotion";
-        public const string TOMATO = "Tomato";
+        public const string COLLECTABLE = "Collectable";
         public const string MENU_PAUSE = "MenuPause";
     }
 }
