@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7364720311488902224}
   - component: {fileID: 4020219336547644249}
   - component: {fileID: 3072449667002517156}
+  - component: {fileID: 7435775001768980300}
   m_Layer: 0
   m_Name: PRF_CHR_Dragon
   m_TagString: Untagged
@@ -63,6 +64,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7435775001768980300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682965892977531923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525c442007d6151458a1e22038e8c0d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5126435469699818328}
+  mesh: {fileID: 8212411264466632637}
+  speed: 200
 --- !u!1001 &1607314819401850569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +156,18 @@ PrefabInstance:
 --- !u!4 &1280408995400939810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ab9735124822c414f97783db3a876324,
+    type: 3}
+  m_PrefabInstance: {fileID: 1607314819401850569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5126435469699818328 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: ab9735124822c414f97783db3a876324,
+    type: 3}
+  m_PrefabInstance: {fileID: 1607314819401850569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8212411264466632637 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1750197354950549132, guid: ab9735124822c414f97783db3a876324,
     type: 3}
   m_PrefabInstance: {fileID: 1607314819401850569}
   m_PrefabAsset: {fileID: 0}
