@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 9003722107869427321}
   - component: {fileID: 3868907315650298899}
   m_Layer: 5
-  m_Name: BTN_HowTo
+  m_Name: BTN_Help
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,7 +741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1023467172521728535
 RectTransform:
   m_ObjectHideFlags: 0
@@ -775,9 +775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a52ad229409d694d851f00834488418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  demoSceneAController: {fileID: 0}
   resume: {fileID: 4502495676565941868}
-  howTo: {fileID: 3868907315650298899}
+  help: {fileID: 3868907315650298899}
   mainMenu: {fileID: 3907114642908383803}
 --- !u!1 &7746480618001527971
 GameObject:
@@ -791,7 +790,7 @@ GameObject:
   - component: {fileID: 8909130742887595022}
   - component: {fileID: 697818267461769466}
   m_Layer: 5
-  m_Name: TXT_HowTo
+  m_Name: TXT_Help
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

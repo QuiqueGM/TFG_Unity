@@ -6,33 +6,36 @@ namespace UOC.TFG.TechnicalDemo
     public class MenuPause : MonoBehaviour
     {
         [SerializeField] private Button resume;
-        [SerializeField] private Button howTo;
+        [SerializeField] private Button help;
         [SerializeField] private Button mainMenu;
 
-        private DemoSceneAController _demoSceneAController;
+        private DemoScenes _demoScene;
 
         void Awake()
         {
             resume.onClick.AddListener(Resume);
-            howTo.onClick.AddListener(HowTo);
+            help.onClick.AddListener(ShowHelp);
             mainMenu.onClick.AddListener(MainMenu);
+        }
 
-            _demoSceneAController = (DemoSceneAController)FindObjectOfType(typeof(DemoSceneAController));
+        private void Start()
+        {
+            _demoScene = (DemoScenes)FindObjectOfType(typeof(DemoScenes));
         }
 
         private void Resume()
         {
-            _demoSceneAController.ShowMenuPause();
+            _demoScene.ShowMenuPause();
         }
 
-        private void HowTo()
+        private void ShowHelp()
         {
-            // Show how does it works this demo
+            _demoScene.ShowHelp();
         }
 
         private void MainMenu()
         {
-            // Return to main menu
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
     }
 }
