@@ -7,7 +7,7 @@ using Cinemachine;
 
 namespace UOC.TFG.TechnicalDemo
 {
-    public class DemoSceneAController : MonoBehaviour
+    public class DemoSceneAController : DemoScenes
     {
         private const int NUMBER_OF_ANIMATIONS = 5;
 
@@ -149,7 +149,7 @@ namespace UOC.TFG.TechnicalDemo
             mesh.material = skins[_skin];
         }
 
-        public void ShowMenuPause()
+        public override void ShowMenuPause()
         {
             cinemachine.enabled = _menuPauseState;
             animator.enabled = _menuPauseState;
