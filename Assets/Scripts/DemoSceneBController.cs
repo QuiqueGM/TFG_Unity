@@ -4,28 +4,28 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Cinemachine;
+using TMPro;
 
 namespace UOC.TFG.TechnicalDemo
 {
-    public class DemoSceneBController : MonoBehaviour
+    public class DemoSceneBController : DemoScenes
     {
+        [Header("Main properties")]
         [SerializeField] private InputActionAsset playerControls;
-        [SerializeField] private CinemachineFreeLook cinemachine;
-
-        [SerializeField] private Animator animator;
-        [SerializeField] private Rigidbody rigidbody;
-        [SerializeField] private Renderer mesh;
+        [SerializeField] private CinemachineVirtualCamera cinemachine;
+        [SerializeField] private DragonController dragonController;
+        [Header("Skins")]
         [SerializeField] private List<Material> skins;
+        [Header("UI")]
         [SerializeField] private Button nextSkin;
         [SerializeField] private Button previousSkin;
+        [SerializeField] private TMP_Text TXT_coins;
+        [SerializeField] private TMP_Text TXT_tomatos;
         [SerializeField] private GameObject menuPause;
-        [Space(10)]
-        [SerializeField] private float speed = 200.0f;
 
         private Dictionary<InputAction, Action<InputAction.CallbackContext>> _actions;
-        private int _skin = 0;
-        private Vector3 _targetRotation;
         private Vector3 _direction;
+        private int _skin = 0;
         private bool _menuPauseState;
 
         private void Awake()
@@ -36,8 +36,8 @@ namespace UOC.TFG.TechnicalDemo
             {
                 { gamePlayMap.FindAction(StringsData.NEXT_SKIN), SetNextSkin },
                 { gamePlayMap.FindAction(StringsData.PREV_SKIN), SetPrevSkin },
-                { gamePlayMap.FindAction(StringsData.LOCOMOTION), Locomotion }
-                //{ gamePlayMap.FindAction(StringsData.MENU_PAUSE), ShowMenuPause }
+                { gamePlayMap.FindAction(StringsData.LOCOMOTION), Locomotion },
+                { gamePlayMap.FindAction(StringsData.MENU_PAUSE), ShowMenuPause }
             };
 
             foreach (var action in _actions)
@@ -46,10 +46,13 @@ namespace UOC.TFG.TechnicalDemo
                 action.Key.canceled += action.Value;
             }
 
-            //nextSkin.onClick.AddListener(SetNextSkin);
-            //previousSkin.onClick.AddListener(SetPrevSkin);
+            nextSkin.onClick.AddListener(SetNextSkin);
+            previousSkin.onClick.AddListener(SetPrevSkin);
 
-            //menuPause.SetActive(_menuPauseState);
+            PlayerStats.instance.CoinEvent += OnChangeCoins;
+            PlayerStats.instance.TomatoEvent += OnChangeTomatos;
+
+            menuPause.SetActive(_menuPauseState);
         }
 
         private void OnEnable()
@@ -64,22 +67,15 @@ namespace UOC.TFG.TechnicalDemo
                 action.Key.Disable();
         }
 
+        private void OnDestroy()
+        {
+            PlayerStats.instance.CoinEvent -= OnChangeCoins;
+            PlayerStats.instance.TomatoEvent -= OnChangeTomatos;
+        }
+
         void FixedUpdate()
         {
-            float magnitude = _direction.magnitude;
-
-            if (magnitude >= 0.01f)
-            {
-                _targetRotation = Quaternion.LookRotation(_direction).eulerAngles;
-                animator.SetFloat(StringsData.LOCOMOTION, magnitude);
-            }
-            else
-            {
-                animator.SetFloat(StringsData.LOCOMOTION, 0);
-            }
-
-            rigidbody.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(_targetRotation), Mathf.Infinity);
-            rigidbody.velocity = _direction * speed * Time.deltaTime;
+            dragonController.Move(_direction);
         }
 
         #region CALLBACKS
@@ -102,17 +98,26 @@ namespace UOC.TFG.TechnicalDemo
 
         private void Locomotion(InputAction.CallbackContext context)
         {
-            var move = context.ReadValue<Vector2>();
-            _direction = new(move.x, 0, move.y);
+            _direction = context.ReadValue<Vector2>();
         }
 
-        //private void ShowMenuPause(InputAction.CallbackContext context)
-        //{
-        //    if (context.ReadValueAsButton())
-        //    {
-        //        ShowMenuPause();
-        //    }
-        //}
+        private void OnChangeCoins(int coins)
+        {
+            TXT_coins.text = string.Format($"Coins: {coins}");
+        }
+
+        private void OnChangeTomatos(int tomatos)
+        {
+            TXT_tomatos.text = string.Format($"Tomatos: {tomatos}");
+        }
+
+        private void ShowMenuPause(InputAction.CallbackContext context)
+        {
+            if (context.ReadValueAsButton())
+            {
+                ShowMenuPause();
+            }
+        }
 
         #endregion
 
@@ -130,25 +135,17 @@ namespace UOC.TFG.TechnicalDemo
 
         private void SetSkin()
         {
-            //if (_menuPauseState) return;
+            if (_menuPauseState) return;
 
-            mesh.material = skins[_skin];
+            dragonController.ChangeSkin(skins[_skin]);
         }
 
-        //public void ShowMenuPause()
-        //{
-        //    cinemachine.enabled = _menuPauseState;
-        //    animator.enabled = _menuPauseState;
-        //    _menuPauseState = !_menuPauseState;
-        //    menuPause.SetActive(_menuPauseState);
-        //}
-
-        private void OnTriggerEnter(Collider other)
+        public override void ShowMenuPause()
         {
-            if (other.CompareTag(StringsData.TOMATO))
-            {
-                // Initialize TOMATO sequence
-            }
+            cinemachine.enabled = _menuPauseState;
+            dragonController.animator.enabled = _menuPauseState;
+            _menuPauseState = !_menuPauseState;
+            menuPause.SetActive(_menuPauseState);
         }
     }
 }
