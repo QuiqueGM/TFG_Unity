@@ -13,6 +13,7 @@ namespace UOC.TFG.TechnicalDemo
         private Vector3 _targetRotation;
         private Vector3 _direction;
         private float _magnitude;
+        private bool _isPaused;
 
         private void Awake()
         {
@@ -21,6 +22,8 @@ namespace UOC.TFG.TechnicalDemo
 
         public void Move(Vector3 _movement)
         {
+            if (_isPaused) return;
+
             _direction = new(_movement.x, 0, _movement.y);
             _magnitude = _direction.magnitude;
 
@@ -41,6 +44,13 @@ namespace UOC.TFG.TechnicalDemo
         public void ChangeSkin(Material skin)
         {
             mesh.material = skin;
+        }
+
+        public void PauseDragonController(bool status)
+        {
+            animator.enabled = status;
+            _rigidbody.isKinematic = !status;
+            _isPaused = !status;
         }
 
         private void OnTriggerEnter(Collider other)
