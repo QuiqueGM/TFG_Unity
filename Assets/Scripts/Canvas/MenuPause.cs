@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace UOC.TFG.TechnicalDemo
 {
@@ -10,11 +11,11 @@ namespace UOC.TFG.TechnicalDemo
         [SerializeField] private Button mainMenu;
 
         private DemoScenes _demoScene;
+        private bool _help = false;
 
         void Awake()
         {
             resume.onClick.AddListener(Resume);
-            help.onClick.AddListener(ShowHelp);
             mainMenu.onClick.AddListener(MainMenu);
         }
 
@@ -23,14 +24,14 @@ namespace UOC.TFG.TechnicalDemo
             _demoScene = (DemoScenes)FindObjectOfType(typeof(DemoScenes));
         }
 
+        public void OnEnable()
+        {
+            EventSystem.current.SetSelectedGameObject(resume.gameObject);
+        }
+
         private void Resume()
         {
             _demoScene.ShowMenuPause();
-        }
-
-        private void ShowHelp()
-        {
-            _demoScene.ShowHelp();
         }
 
         private void MainMenu()
