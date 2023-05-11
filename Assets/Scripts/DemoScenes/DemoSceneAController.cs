@@ -21,7 +21,7 @@ namespace UOC.TFG.TechnicalDemo
         [SerializeField] private Button previousAnimation;
         [SerializeField] private Button nextSkin;
         [SerializeField] private Button previousSkin;
-        [SerializeField] private GameObject menuPause;
+        [SerializeField] private CanvasManager canvasManager;
 
         private Dictionary<InputAction, Action<InputAction.CallbackContext>> _actions;
         private int _animation = 0;
@@ -51,8 +51,6 @@ namespace UOC.TFG.TechnicalDemo
             previousAnimation.onClick.AddListener(SetPrevAnimation);
             nextSkin.onClick.AddListener(SetNextSkin);
             previousSkin.onClick.AddListener(SetPrevSkin);
-
-            menuPause.SetActive(_menuPauseState);
         }
 
         private void OnEnable()
@@ -153,8 +151,12 @@ namespace UOC.TFG.TechnicalDemo
         {
             cinemachine.enabled = _menuPauseState;
             animator.enabled = _menuPauseState;
+            nextAnimation.interactable = _menuPauseState;
+            previousAnimation.interactable = _menuPauseState;
+            nextSkin.interactable = _menuPauseState;
+            previousSkin.interactable = _menuPauseState;
             _menuPauseState = !_menuPauseState;
-            menuPause.SetActive(_menuPauseState);
+            canvasManager.ShowMenuPause(_menuPauseState);
         }
     }
 }
