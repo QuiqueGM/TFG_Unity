@@ -7,9 +7,5 @@ namespace UOC.TFG.TechnicalDemo
         public virtual void ShowMenuPause()
         {
         }
-
-        public virtual void ShowHelp()
-        {
-        }
     }
 }

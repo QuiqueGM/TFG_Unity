@@ -143,7 +143,7 @@ namespace UOC.TFG.TechnicalDemo
         public override void ShowMenuPause()
         {
             cinemachine.enabled = _menuPauseState;
-            dragonController.animator.enabled = _menuPauseState;
+            dragonController.PauseDragonController(_menuPauseState);
             _menuPauseState = !_menuPauseState;
             menuPause.SetActive(_menuPauseState);
         }
