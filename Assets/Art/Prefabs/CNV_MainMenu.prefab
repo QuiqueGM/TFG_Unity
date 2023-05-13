@@ -1037,6 +1037,8 @@ MonoBehaviour:
   demoSceneB: {fileID: 3868907315650298899}
   credits: {fileID: 3907114642908383803}
   quit: {fileID: 5475264761259451413}
+  CNV_mainMenu: {fileID: 0}
+  CNV_credits: {fileID: 0}
 --- !u!1 &7746480618001527971
 GameObject:
   m_ObjectHideFlags: 0

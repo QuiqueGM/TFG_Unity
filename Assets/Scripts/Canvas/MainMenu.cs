@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,6 +14,10 @@ namespace UOC.TFG.TechnicalDemo
         [SerializeField] private Button demoSceneB;
         [SerializeField] private Button credits;
         [SerializeField] private Button quit;
+        [Space(5)]
+        [SerializeField] private GameObject buttons;
+        [SerializeField] private GameObject CNV_credits;
+
 
         void Awake()
         {
@@ -20,6 +25,14 @@ namespace UOC.TFG.TechnicalDemo
             demoSceneB.onClick.AddListener(DemoSceneB);
             credits.onClick.AddListener(Credits);
             quit.onClick.AddListener(Quit);
+
+            buttons.SetActive(true);
+            CNV_credits.SetActive(false);
+        }
+
+        public void OnEnable()
+        {
+            EventSystem.current.SetSelectedGameObject(demoSceneA.gameObject);
         }
 
         private void DemoSceneA()
@@ -34,6 +47,8 @@ namespace UOC.TFG.TechnicalDemo
 
         private void Credits()
         {
+            buttons.SetActive(false);
+            CNV_credits.SetActive(true);
         }
 
         private void Quit()
