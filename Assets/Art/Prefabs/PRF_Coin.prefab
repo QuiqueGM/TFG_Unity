@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 139227058142172693}
+  - component: {fileID: 3946190404545999251}
+  - component: {fileID: 758057922055208233}
   m_Layer: 0
   m_Name: PRF_Coin
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +34,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3946190404545999251
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194710288195789730}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 1.12, z: 0}
+--- !u!114 &758057922055208233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194710288195789730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc91dbecc38cd194e8578f0bfb688f3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7949593521928255206
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,8 +71,6 @@ GameObject:
   - component: {fileID: 2168922549291195957}
   - component: {fileID: 131895169505801492}
   - component: {fileID: 3152179722765629568}
-  - component: {fileID: 5662873585717729066}
-  - component: {fileID: 7278331319337208271}
   m_Layer: 0
   m_Name: MSH_Con
   m_TagString: Collectable
@@ -138,29 +163,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!135 &5662873585717729066
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7949593521928255206}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.036
-  m_Center: {x: 0, y: 0.036, z: 0}
---- !u!114 &7278331319337208271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7949593521928255206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc91dbecc38cd194e8578f0bfb688f3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: d21c526aee9c12e4392a35ddee78f775, type: 2}
