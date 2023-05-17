@@ -52,6 +52,8 @@ namespace UOC.TFG.TechnicalDemo
             PlayerStats.instance.CoinEvent += OnChangeCoins;
             PlayerStats.instance.TomatoEvent += OnChangeTomatos;
 
+
+
             menuPause.SetActive(_menuPauseState);
         }
 
@@ -101,14 +103,14 @@ namespace UOC.TFG.TechnicalDemo
             _direction = context.ReadValue<Vector2>();
         }
 
-        private void OnChangeCoins(int coins)
+        public void OnChangeCoins(int coins)
         {
-            TXT_coins.text = string.Format($"Coins: {coins}");
+            TXT_coins.text = string.Format($"Coins: {coins} / {PlayerStats.instance.Coins}");
         }
 
-        private void OnChangeTomatos(int tomatos)
+        public void OnChangeTomatos(int tomatos)
         {
-            TXT_tomatos.text = string.Format($"Tomatos: {tomatos}");
+            TXT_tomatos.text = string.Format($"Tomatos: {tomatos} / {PlayerStats.instance.Tomatos}");
         }
 
         private void ShowMenuPause(InputAction.CallbackContext context)

@@ -10,12 +10,19 @@ namespace UOC.TFG.TechnicalDemo
 
         public static PlayerStats instance;
 
+        public int Tomatos { get; set; }
+        public int Coins { get; set; }
+
         private int _tomatos;
         private int _coins;
 
         private void Awake()
         {
             instance = this;
+        }
+
+        private void Start()
+        {
             ResetStats();
         }
 
