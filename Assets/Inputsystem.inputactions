@@ -63,17 +63,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "27b9375d-b2f6-4e48-87ad-354f416b9bc8",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "OrbitCamera",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c3e85c78-4fda-449c-98bf-b9bf7f258e43",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
@@ -82,6 +71,39 @@
                     "action": "OrbitCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "e4e21304-323c-421e-ae8f-078538d2e98b",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OrbitCamera",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "3b2ef9b5-c5b5-4769-943d-fb260198ddc2",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OrbitCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "ce171b8a-5693-410b-aaf7-5a77f10143b0",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OrbitCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
