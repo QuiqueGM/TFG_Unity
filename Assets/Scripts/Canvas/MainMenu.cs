@@ -7,9 +7,6 @@ namespace UOC.TFG.TechnicalDemo
 {
     public class MainMenu : MonoBehaviour
     {
-        private readonly string DEMOSCENE_A = "DemoScene_A";
-        private readonly string DEMOSCENE_B = "DemoScene_B";
-
         [SerializeField] private Button demoSceneA;
         [SerializeField] private Button demoSceneB;
         [SerializeField] private Button credits;
@@ -37,12 +34,12 @@ namespace UOC.TFG.TechnicalDemo
 
         private void DemoSceneA()
         {
-            SceneManager.LoadScene(DEMOSCENE_A);
+            SceneManager.LoadScene(StringsData.DEMOSCENE_A);
         }
 
         private void DemoSceneB()
         {
-            SceneManager.LoadScene(DEMOSCENE_B);
+            SceneManager.LoadScene(StringsData.DEMOSCENE_B);
         }
 
         private void Credits()
