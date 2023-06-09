@@ -155,6 +155,7 @@ namespace UOC.TFG.TechnicalDemo
             previousAnimation.interactable = _menuPauseState;
             nextSkin.interactable = _menuPauseState;
             previousSkin.interactable = _menuPauseState;
+
             _menuPauseState = !_menuPauseState;
             canvasManager.ShowMenuPause(_menuPauseState);
         }

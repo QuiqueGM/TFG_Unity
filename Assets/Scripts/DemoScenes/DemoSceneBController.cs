@@ -146,6 +146,9 @@ namespace UOC.TFG.TechnicalDemo
         {
             cinemachine.enabled = _menuPauseState;
             dragonController.PauseDragonController(_menuPauseState);
+            nextSkin.interactable = _menuPauseState;
+            previousSkin.interactable = _menuPauseState;
+
             _menuPauseState = !_menuPauseState;
             menuPause.SetActive(_menuPauseState);
         }
