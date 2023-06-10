@@ -468,6 +468,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1760694289}
     m_Modifications:
+    - target: {fileID: 334363228025452245, guid: 1d6c87e9aa905e44ba83df43003746a8,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 2501c2da642cf714a876f6db2fb90f4d, type: 2}
     - target: {fileID: 1023467172521728535, guid: 1d6c87e9aa905e44ba83df43003746a8,
         type: 3}
       propertyPath: m_Pivot.x
@@ -583,6 +588,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CNV_MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7398772088705362350, guid: 1d6c87e9aa905e44ba83df43003746a8,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 2501c2da642cf714a876f6db2fb90f4d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d6c87e9aa905e44ba83df43003746a8, type: 3}
 --- !u!1 &1760694285
