@@ -115,8 +115,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.2440186}
-  m_SizeDelta: {x: -470.41, y: -520.539}
+  m_AnchoredPosition: {x: 0, y: -32.285057}
+  m_SizeDelta: {x: -470.41, y: -454.37012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3535732425757437970
 CanvasRenderer:
@@ -147,11 +147,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Social Point SL, no cedeix els drets d'aquests recursos ni a la UOC ni
-    a cap altra entitat per fer-ne \xFAs o publicitat a trav\xE9s de v\xEDdeos o
-    demostracions."
+    a cap altra entitat per fer-ne \xFAs o publicitat de cap mena per cap tipus de
+    canal; web, v\xEDdeos, demostracions, etc."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: b49b27703282e5a42a8a3e43c5453bdd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_text: "CR\xC8DITS"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 2501c2da642cf714a876f6db2fb90f4d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -368,7 +368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1023467172521728535
 RectTransform:
   m_ObjectHideFlags: 0
@@ -470,16 +470,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Aquesta demostraci\xF3 t\xE8cnica \xE9s el resultat final del proc\xE9s
-    de creaci\xF3 d'un rig amb l'eina TotalRIG, projecte final de la carrera del
-    Grau en T\xE8cniques d'Interacci\xF3 Digital i Multim\xE8dia de la UOC que ha
-    estat enterament desenvolupat per <b>Enric Grases Mart\xEDnez</b>.\r\n\r\nTots
-    els recursos utilitzats al llarg d'aquest projecte (incloent aquesta demostraci\xF3
-    t\xE8cnica) com models, textures i animacions s\xF3n propietat de <b>Social Point
+    de creaci\xF3 d'un rig amb l'eina TotalRIG, projecte final del Grau en T\xE8cniques
+    d'Interacci\xF3 Digital i Multim\xE8dia de la UOC que ha estat enterament desenvolupat
+    per <b>Enric Grases Mart\xEDnez</b>.\r\n\r\nTots els recursos utilitzats al llarg
+    d'aquest projecte, algun d'ells inclosos tamb\xE9 dins del marc d'aquesta demostraci\xF3
+    t\xE8cnica, com models, textures i animacions s\xF3n propietat de <b>Social Point
     SL</b>, que cedeix els drets d'explotaci\xF3 nom\xE9s a Enric Grases Mart\xEDnez
     per al desenvolupament \xFAnicament d'aquest treball final de carrera.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: b49b27703282e5a42a8a3e43c5453bdd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
