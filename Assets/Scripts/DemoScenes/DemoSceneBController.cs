@@ -105,12 +105,12 @@ namespace UOC.TFG.TechnicalDemo
 
         public void OnChangeCoins(int coins)
         {
-            TXT_coins.text = string.Format($"Coins: {coins} / {PlayerStats.instance.Coins}");
+            TXT_coins.text = string.Format($"{coins} / {PlayerStats.instance.Coins}");
         }
 
         public void OnChangeTomatos(int tomatos)
         {
-            TXT_tomatos.text = string.Format($"Tomatos: {tomatos} / {PlayerStats.instance.Tomatos}");
+            TXT_tomatos.text = string.Format($"{tomatos} / {PlayerStats.instance.Tomatos}");
         }
 
         private void ShowMenuPause(InputAction.CallbackContext context)
