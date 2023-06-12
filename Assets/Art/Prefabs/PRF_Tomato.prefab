@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6030337289588199582}
   - component: {fileID: 5511585384219278271}
   - component: {fileID: 3922501783785926156}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MSH_Tomato
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   m_Layer: 0
   m_Name: PRF_Tomato
   m_TagString: Collectable
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
