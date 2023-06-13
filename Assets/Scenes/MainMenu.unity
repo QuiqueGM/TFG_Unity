@@ -447,6 +447,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CNV_Credits
       objectReference: {fileID: 0}
+    - target: {fileID: 6822059682371086666, guid: 8da2c7c3dc0e72e4b9606df11eb29476,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8da2c7c3dc0e72e4b9606df11eb29476, type: 3}
 --- !u!1 &767463041 stripped
@@ -583,6 +588,11 @@ PrefabInstance:
       propertyPath: CNV_credits
       value: 
       objectReference: {fileID: 767463041}
+    - target: {fileID: 6428628870545507816, guid: 1d6c87e9aa905e44ba83df43003746a8,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6822059682371086666, guid: 1d6c87e9aa905e44ba83df43003746a8,
         type: 3}
       propertyPath: m_Name
