@@ -469,7 +469,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Mou el personatge per l'escena i intenta recollir totes les monedes i
-    tom\xE0quets."
+    tom\xE0quets.\n(Per aquesta escena \xE9s altament recomanable l'\xFAs de gamepad)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: b49b27703282e5a42a8a3e43c5453bdd, type: 2}
